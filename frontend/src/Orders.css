@@ -1,0 +1,564 @@
+.orders-page {
+  min-height: 100vh;
+  padding: 32px 6%;
+  background: #fffaf6;
+  color: #42101f;
+  font-family: Arial, sans-serif;
+}
+
+.orders-back {
+  padding: 11px 17px;
+  border: 1px solid #ead8d3;
+  border-radius: 25px;
+  background: #fff;
+  color: #7d1735;
+  cursor: pointer;
+}
+
+.orders-heading {
+  margin: 35px 0;
+  text-align: center;
+}
+
+.orders-heading span {
+  color: #b18453;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.orders-heading h1 {
+  margin: 12px 0;
+  font: bold clamp(34px, 5vw, 48px) Georgia, serif;
+}
+
+.orders-heading p {
+  color: #806d6d;
+}
+
+.orders-list {
+  display: grid;
+  gap: 22px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.order-card,
+.order-details-panel {
+  overflow: hidden;
+  border: 1px solid #f0dfd9;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.order-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 22px;
+  background: #fffdfb;
+  border-bottom: 1px solid #f0dfd9;
+}
+
+.order-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #b18453;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.order-id {
+  overflow-wrap: anywhere;
+}
+
+.order-date {
+  margin-bottom: 0;
+  color: #806d6d;
+  font-size: 13px;
+}
+
+.order-status {
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: #f7eee3;
+  color: #805b24;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.status-delivered {
+  background: #e7f5e9;
+  color: #28733b;
+}
+
+.status-cancelled {
+  background: #fbe8e9;
+  color: #a1263f;
+}
+
+.status-shipped {
+  background: #e7efff;
+  color: #2857a4;
+}
+
+.order-card-products {
+  padding: 0 22px;
+}
+
+.order-product {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid #f0dfd9;
+}
+
+.order-product img,
+.order-product-placeholder {
+  flex-shrink: 0;
+  width: 78px;
+  height: 90px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.order-product-placeholder {
+  display: grid;
+  place-items: center;
+  background: #f8eae5;
+  color: #7d1735;
+  font: bold 30px Georgia, serif;
+}
+
+.order-product-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.order-product-info h3 {
+  margin: 0 0 8px;
+  font: bold 17px Georgia, serif;
+}
+
+.order-product-info p {
+  margin: 5px 0;
+  color: #806d6d;
+  font-size: 13px;
+}
+
+.order-product > strong {
+  white-space: nowrap;
+  color: #8b1736;
+}
+
+.order-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 22px;
+}
+
+.order-card-footer > div:first-child > span {
+  display: block;
+  margin-bottom: 6px;
+  color: #806d6d;
+  font-size: 13px;
+}
+
+.order-card-footer > div:first-child > strong {
+  font-size: 21px;
+}
+
+.order-card-footer p {
+  margin-bottom: 0;
+  color: #806d6d;
+  font-size: 12px;
+}
+
+.order-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.order-actions button,
+.orders-empty button {
+  padding: 11px 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.order-details-button,
+.orders-empty button {
+  border: 0;
+  background: #7d1735;
+  color: white;
+}
+
+.order-cancel-button {
+  border: 1px solid #e5bfc7;
+  background: white;
+  color: #a1263f;
+}
+
+.order-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.orders-empty,
+.orders-message,
+.orders-error {
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 30px;
+  border: 1px solid #f0dfd9;
+  border-radius: 12px;
+  background: white;
+  text-align: center;
+}
+
+.orders-empty-icon {
+  color: #8b1736;
+  font-size: 45px;
+}
+
+.orders-empty h2 {
+  font-family: Georgia, serif;
+}
+
+.orders-empty p {
+  color: #806d6d;
+}
+
+.orders-empty button {
+  margin-top: 12px;
+}
+
+.orders-error {
+  color: #a1263f;
+}
+
+.order-details-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.order-details-panel {
+  padding: 24px;
+  overflow-wrap: anywhere;
+}
+
+.order-details-panel h2 {
+  margin: 0 0 20px;
+  font: bold 23px Georgia, serif;
+}
+
+.order-details-panel p {
+  color: #715b60;
+  line-height: 1.6;
+}
+
+.order-details-products {
+  grid-column: 1 / -1;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 0;
+  border-bottom: 1px solid #f0dfd9;
+  color: #715b60;
+}
+
+.detail-row strong {
+  color: #42101f;
+  text-align: right;
+}
+
+.order-detail-total {
+  border-bottom: 0;
+  color: #8b1736;
+  font-size: 20px;
+}
+
+.order-detail-total strong {
+  color: #8b1736;
+}
+
+@media (max-width: 700px) {
+  .orders-page {
+    padding: 22px 4%;
+  }
+
+  .order-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .order-details-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .order-details-products {
+    grid-column: auto;
+  }
+
+  .order-product {
+    gap: 11px;
+  }
+
+  .order-product img,
+  .order-product-placeholder {
+    width: 65px;
+    height: 78px;
+  }
+}
+
+@media (max-width: 420px) {
+  .order-card-header {
+    flex-direction: column;
+  }
+
+  .order-product-info h3 {
+    font-size: 14px;
+  }
+
+  .order-product > strong {
+    font-size: 13px;
+  }
+
+  .order-actions {
+    width: 100%;
+  }
+}
+
+/* Rajlaxmi Boutique - Order Tracking */
+
+.rb-tracking-panel {
+  margin: 0 0 28px;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid #efd9d2;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(93, 16, 40, 0.04);
+}
+
+.rb-tracking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.rb-tracking-eyebrow {
+  color: #b18453;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.rb-tracking-header h2 {
+  margin: 10px 0;
+  color: #42101f;
+  font-family: Georgia, serif;
+  font-size: 27px;
+}
+
+
+.rb-tracking-header p {
+  color: #806d6d;
+  font-size: 14px;
+}
+
+.rb-status-badge {
+  padding: 9px 14px;
+  border-radius: 25px;
+  background: #f8ece8;
+  color: #7d1735;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.rb-status-badge.is-cancelled {
+  background: #fde8e8;
+  color: #a52235;
+}
+
+.rb-tracking-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 18px;
+  background: #fffaf6;
+  border-radius: 10px;
+}
+
+.rb-tracking-meta div {
+  min-width: 0;
+}
+
+.rb-tracking-meta span {
+  display: block;
+  margin-bottom: 8px;
+  color: #806d6d;
+  font-size: 13px;
+}
+
+.rb-tracking-meta strong {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #7d1735;
+  font-size: 14px;
+}
+
+.rb-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 35px;
+}
+
+.rb-timeline-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #a99a9a;
+  font-size: 12px;
+}
+
+.rb-timeline-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 17px;
+  left: calc(50% + 22px);
+  width: calc(100% - 44px);
+  height: 3px;
+  background: #eadfdd;
+}
+
+.rb-timeline-step.completed:not(:last-child)::after {
+  background: #7d1735;
+}
+
+.rb-timeline-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 12px;
+  border: 2px solid #eadfdd;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 14px;
+}
+
+.rb-timeline-step.completed {
+  color: #7d1735;
+}
+
+.rb-timeline-step.completed .rb-timeline-icon {
+  border-color: #7d1735;
+  background: #7d1735;
+  color: #fff;
+}
+
+.rb-timeline-step.active .rb-timeline-icon {
+  box-shadow: 0 0 0 5px #f6e6e9;
+}
+
+.rb-timeline-step strong {
+  font-size: 12px;
+}
+
+.rb-current-label {
+  margin-top: 6px;
+  color: #b18453;
+  font-size: 10px;
+}
+
+.rb-refresh-note {
+  margin: 24px 0 0;
+  color: #99878a;
+  font-size: 12px;
+  text-align: center;
+}
+
+.rb-cancelled-message {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #fff0f0;
+  color: #a52235;
+  font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  .rb-tracking-panel {
+    padding: 18px 14px;
+  }
+
+  .rb-tracking-header {
+    flex-direction: column;
+  }
+
+  .rb-tracking-header h2 {
+    font-size: 23px;
+  }
+
+  .rb-tracking-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .rb-timeline {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 25px;
+  }
+
+  .rb-timeline-step {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 12px;
+    align-items: center;
+    min-height: 65px;
+    text-align: left;
+  }
+
+  .rb-timeline-icon {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    margin: 0;
+  }
+
+  .rb-timeline-step strong {
+    grid-column: 2;
+    align-self: end;
+  }
+
+  .rb-current-label {
+    grid-column: 2;
+    margin-top: 3px;
+  }
+
+  .rb-timeline-step:not(:last-child)::after {
+    top: 42px;
+    left: 17px;
+    width: 3px;
+    height: 23px;
+  }
+}

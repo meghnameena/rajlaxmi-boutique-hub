@@ -1,0 +1,759 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+
+.admin-layout {
+  --admin-primary: #8b3d62;
+  --admin-primary-dark: #6e294b;
+  --admin-bg: #faf7f8;
+  --admin-text: #30252c;
+  --admin-muted: #8b8187;
+  display: flex;
+  min-height: 100vh;
+  background: var(--admin-bg);
+  color: var(--admin-text);
+  font-family: "DM Sans", sans-serif;
+}
+
+.admin-layout * {
+  box-sizing: border-box;
+}
+
+.admin-sidebar {
+  width: 255px;
+  flex-shrink: 0;
+  background: #fff;
+  border-right: 1px solid #eee5e9;
+  padding: 30px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px 30px;
+  border-bottom: 1px solid #f0e8ec;
+}
+
+.admin-brand-icon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  color: white;
+  background: var(--admin-primary);
+  font-size: 25px;
+}
+
+.admin-brand h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 19px;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.admin-brand span {
+  display: block;
+  color: var(--admin-muted);
+  font-size: 9px;
+  margin-top: 4px;
+}
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 24px 5px;
+}
+
+.admin-avatar {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f5e4ec;
+  color: var(--admin-primary);
+  font-weight: 700;
+}
+
+.admin-profile strong,
+.admin-profile span {
+  display: block;
+}
+
+.admin-profile strong {
+  font-size: 12px;
+}
+
+.admin-profile span {
+  font-size: 11px;
+  color: var(--admin-muted);
+  margin-top: 4px;
+}
+
+.admin-menu-label {
+  padding: 0 10px;
+  margin: 5px 0 13px;
+  color: #a49aa0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.admin-menu {
+  display: grid;
+  gap: 8px;
+}
+
+.admin-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 13px 12px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #74666e;
+  text-align: left;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.admin-menu-item > span {
+  width: 21px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.admin-menu-item:hover,
+.admin-menu-item.active {
+  color: var(--admin-primary);
+  background: #f9edf2;
+}
+
+.admin-menu-item.active {
+  font-weight: 700;
+}
+
+.admin-sidebar-bottom {
+  display: grid;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 30px;
+  border-top: 1px solid #f0e8ec;
+}
+
+.admin-logout:hover {
+  color: #c0394b;
+  background: #fff0f1;
+}
+
+.admin-main {
+  flex: 1;
+  min-width: 0;
+  padding: 35px 38px;
+}
+
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.admin-breadcrumb {
+  color: var(--admin-muted);
+  font-size: 12px;
+  margin: 0 0 9px;
+}
+
+.admin-topbar h1 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(25px, 3vw, 34px);
+  font-weight: 600;
+}
+
+.admin-welcome {
+  margin: 9px 0 0;
+  color: var(--admin-muted);
+  font-size: 13px;
+}
+
+.admin-store-button {
+  padding: 12px 17px;
+  border: 1px solid #e8d5df;
+  border-radius: 9px;
+  background: #fff;
+  color: var(--admin-primary);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.admin-store-button:hover {
+  background: #f9edf2;
+}
+
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.admin-stat-card {
+  padding: 23px 20px;
+  background: white;
+  border: 1px solid #f0e8ec;
+  border-radius: 15px;
+  box-shadow: 0 4px 18px rgb(78 39 58 / 3%);
+}
+
+.admin-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--admin-muted);
+  font-size: 12px;
+}
+
+.admin-stat-icon {
+  display: grid;
+  place-items: center;
+  width: 41px;
+  height: 41px;
+  border-radius: 12px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.admin-stat-icon.purple {
+  color: #7854bd;
+  background: #f0eaff;
+}
+
+.admin-stat-icon.pink {
+  color: #b14c78;
+  background: #fbe9f0;
+}
+
+.admin-stat-icon.orange {
+  color: #c17b37;
+  background: #fff0dd;
+}
+
+.admin-stat-icon.blue {
+  color: #477bb7;
+  background: #e8f2ff;
+}
+
+.admin-stat-card h2 {
+  margin: 21px 0 9px;
+  font-size: clamp(22px, 2vw, 29px);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.admin-stat-caption {
+  margin: 0;
+  color: #a29aa0;
+  font-size: 11px;
+}
+
+.admin-status-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  margin: 22px 0;
+}
+
+.admin-status-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid #f0e8ec;
+  border-radius: 12px;
+  background: white;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.pending-dot {
+  background: #e5a342;
+}
+
+.shipped-dot {
+  background: #568cdd;
+}
+
+.delivered-dot {
+  background: #42a779;
+}
+
+.cancelled-dot {
+  background: #d85d67;
+}
+
+.admin-status-card p {
+  margin: 0 0 6px;
+  color: var(--admin-muted);
+  font-size: 11px;
+}
+
+.admin-status-card h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.admin-panel {
+  margin-top: 22px;
+  overflow: hidden;
+  border: 1px solid #f0e8ec;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 4px 18px rgb(78 39 58 / 3%);
+}
+
+.admin-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 23px 24px;
+}
+
+.admin-panel-heading h2 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+}
+
+.admin-panel-heading p {
+  margin: 6px 0 0;
+  color: var(--admin-muted);
+  font-size: 12px;
+}
+
+.admin-view-all {
+  padding: 9px 12px;
+  border: 1px solid #ead5df;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--admin-primary);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.admin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.admin-table thead {
+  background: #fcf8fa;
+}
+
+.admin-table th {
+  padding: 14px 20px;
+  color: #978991;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.admin-table td {
+  padding: 17px 20px;
+  border-top: 1px solid #f4edf0;
+  font-size: 12px;
+}
+
+.admin-table td > strong {
+  color: var(--admin-primary);
+}
+
+.admin-customer strong,
+.admin-customer span,
+.admin-payment span,
+.admin-payment small {
+  display: block;
+}
+
+.admin-customer strong {
+  font-size: 12px;
+}
+
+.admin-customer span {
+  margin-top: 5px;
+  color: var(--admin-muted);
+  font-size: 10px;
+}
+
+.admin-payment span {
+  font-weight: 600;
+}
+
+.admin-payment small {
+  margin-top: 4px;
+  color: var(--admin-muted);
+  font-size: 10px;
+}
+
+.admin-status-badge,
+.admin-stock-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.admin-status-badge.placed,
+.admin-status-badge.pending {
+  background: #fff2d9;
+  color: #ad7418;
+}
+
+.admin-status-badge.confirmed {
+  background: #e9e4ff;
+  color: #7058b9;
+}
+
+.admin-status-badge.shipped {
+  background: #e5f0ff;
+  color: #3b73b5;
+}
+
+.admin-status-badge.delivered {
+  background: #e2f6eb;
+  color: #258452;
+}
+
+.admin-status-badge.cancelled {
+  background: #ffeaec;
+  color: #c44755;
+}
+
+.admin-empty {
+  padding: 35px !important;
+  color: var(--admin-muted);
+  text-align: center;
+}
+
+.admin-alert-count {
+  padding: 9px 12px;
+  border-radius: 20px;
+  background: #fff0e5;
+  color: #b76525;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.admin-stock-list {
+  padding: 0 24px 10px;
+}
+
+.admin-stock-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 110px 90px;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-top: 1px solid #f4edf0;
+}
+
+.admin-stock-product {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.admin-stock-image {
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 57px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #f7edf1;
+  font-size: 20px;
+}
+
+.admin-stock-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-stock-product strong,
+.admin-stock-product span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-stock-product strong {
+  font-size: 12px;
+}
+
+.admin-stock-product span {
+  margin-top: 5px;
+  color: var(--admin-muted);
+  font-size: 11px;
+}
+
+.admin-stock-price {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.admin-stock-badge.low-stock {
+  justify-self: end;
+  background: #fff1dc;
+  color: #ad7418;
+}
+
+.admin-stock-badge.out-of-stock {
+  justify-self: end;
+  background: #ffeaec;
+  color: #c44755;
+}
+
+.admin-stock-empty {
+  padding: 28px;
+  text-align: center;
+  color: #278557;
+}
+
+.admin-stock-empty span {
+  font-size: 27px;
+}
+
+.admin-stock-empty p {
+  margin-bottom: 0;
+  color: var(--admin-muted);
+  font-size: 12px;
+}
+
+.admin-loading {
+  display: grid;
+  place-items: center;
+  min-height: 300px;
+  color: var(--admin-muted);
+}
+
+.admin-spinner {
+  width: 35px;
+  height: 35px;
+  border: 3px solid #f0dce5;
+  border-top-color: var(--admin-primary);
+  border-radius: 50%;
+  animation: admin-spin 0.8s linear infinite;
+}
+
+@keyframes admin-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.admin-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 15px 18px;
+  border: 1px solid #f3cbd0;
+  border-radius: 10px;
+  background: #fff0f1;
+  color: #b33b4b;
+  font-size: 12px;
+}
+
+.admin-error button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 7px;
+  background: #b33b4b;
+  color: white;
+  cursor: pointer;
+}
+
+.admin-footer {
+  padding: 28px 0 8px;
+  color: #a49aa0;
+  font-size: 11px;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .admin-main {
+    padding: 28px 24px;
+  }
+
+  .admin-sidebar {
+    width: 225px;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-status-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-layout {
+    display: block;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    padding: 17px;
+    border-right: none;
+    border-bottom: 1px solid #eee5e9;
+  }
+
+  .admin-brand {
+    padding-bottom: 15px;
+  }
+
+  .admin-profile {
+    padding: 15px 5px;
+  }
+
+  .admin-menu-label {
+    margin-top: 0;
+  }
+
+  .admin-menu {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-menu-item {
+    padding: 11px 8px;
+    font-size: 12px;
+  }
+
+  .admin-sidebar-bottom {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 15px;
+    padding-top: 12px;
+  }
+
+  .admin-main {
+    padding: 24px 14px;
+  }
+
+  .admin-topbar {
+    align-items: flex-start;
+  }
+
+  .admin-topbar h1 {
+    font-size: 25px;
+  }
+
+  .admin-welcome {
+    line-height: 1.6;
+  }
+
+  .admin-store-button {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .admin-stats-grid,
+  .admin-status-grid {
+    gap: 10px;
+  }
+
+  .admin-stat-card {
+    padding: 15px 12px;
+  }
+
+  .admin-stat-top {
+    align-items: flex-start;
+    font-size: 11px;
+  }
+
+  .admin-stat-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+
+  .admin-stat-card h2 {
+    font-size: 23px;
+  }
+
+  .admin-status-card {
+    padding: 13px 10px;
+    gap: 8px;
+  }
+
+  .admin-status-card p {
+    font-size: 10px;
+  }
+
+  .admin-status-card h3 {
+    font-size: 19px;
+  }
+
+  .admin-panel-heading {
+    padding: 18px 14px;
+  }
+
+  .admin-panel-heading h2 {
+    font-size: 18px;
+  }
+
+  .admin-stock-list {
+    padding: 0 14px 10px;
+  }
+
+  .admin-stock-item {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  .admin-stock-price {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .admin-stock-badge {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}

@@ -1,0 +1,94 @@
+.order-success-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  padding: 30px 18px;
+  background: #fffaf6;
+  color: #42101f;
+  font-family: Arial, sans-serif;
+}
+
+.order-success-card {
+  width: min(100%, 620px);
+  box-sizing: border-box;
+  padding: 42px;
+  border: 1px solid #f0dfd9;
+  border-radius: 16px;
+  background: white;
+  text-align: center;
+}
+
+.order-success-icon {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  background: #edf7ed;
+  color: #267b40;
+  font-size: 36px;
+}
+
+.order-success-card > span {
+  color: #b18453;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.order-success-card h1 {
+  font: bold clamp(28px, 5vw, 40px) Georgia, serif;
+}
+
+.order-success-card > p {
+  color: #806d6d;
+  line-height: 1.7;
+}
+
+.order-success-details {
+  margin: 26px 0;
+  padding: 18px;
+  border-radius: 8px;
+  background: #fffaf6;
+  text-align: left;
+}
+
+.order-success-details div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0dfd9;
+}
+
+.order-success-details div:last-child {
+  border-bottom: 0;
+}
+
+.order-success-details span {
+  color: #806d6d;
+}
+
+.order-success-details strong {
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+.order-success-card button {
+  width: 100%;
+  padding: 14px;
+  border: 0;
+  border-radius: 7px;
+  background: #7d1735;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .order-success-card {
+    padding: 25px 18px;
+  }
+}

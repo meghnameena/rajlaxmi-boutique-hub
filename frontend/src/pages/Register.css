@@ -1,0 +1,150 @@
+/* ROYAL RAJLAXMI REGISTER CARD */
+
+.register-3d-form-section {
+  background:
+    radial-gradient(circle at top right, #f5e5d5, transparent 45%),
+    #fff8f0 !important;
+  padding: 30px !important;
+}
+
+.register-3d-card {
+  position: relative;
+  width: 100%;
+  max-width: 540px !important;
+  padding: 42px 38px !important;
+  margin: auto !important;
+
+  background: linear-gradient(145deg, #fffdf9, #fdf0e3) !important;
+  border: 2px solid #c18a3d !important;
+  border-radius: 25px !important;
+
+  box-shadow:
+    0 0 0 5px rgba(193, 138, 61, 0.10),
+    0 18px 45px rgba(75, 24, 38, 0.15),
+    inset 0 0 25px rgba(212, 175, 55, 0.08);
+
+  overflow: visible;
+}
+
+/* Inner golden frame */
+.register-3d-card::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(193, 138, 61, 0.45);
+  border-radius: 18px;
+  pointer-events: none;
+}
+
+/* Royal floral ornaments */
+.register-3d-card::after {
+  content: "❀";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 58px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f3d58a;
+  background: linear-gradient(135deg, #8b1e3f, #4d1028);
+  border: 2px solid #d4af37;
+  border-radius: 50% 50% 45% 45%;
+  font-size: 25px;
+  z-index: 3;
+  box-shadow: 0 5px 12px rgba(75, 24, 38, 0.2);
+}
+
+/* Brand and heading */
+.register-3d-card .auth-brand {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto 22px !important;
+}
+
+.register-3d-card .auth-eyebrow {
+  color: #ae7935 !important;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.register-3d-card h1 {
+  color: #781b37 !important;
+  font-family: Georgia, serif;
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 12px !important;
+}
+
+/* Decorative heading divider */
+.register-3d-card h1::after {
+  content: "❧ ✧ ❧";
+  display: block;
+  color: #b88743;
+  font-size: 17px;
+  letter-spacing: 5px;
+  margin-top: 8px;
+}
+
+/* Input styling */
+.register-3d-card .auth-input-wrap {
+  border: 1px solid #dfc5a8 !important;
+  border-radius: 30px !important;
+  background: rgba(255,255,255,0.8) !important;
+  box-shadow: 0 3px 8px rgba(90, 40, 30, 0.04);
+}
+
+.register-3d-card .auth-input-wrap:focus-within {
+  border-color: #c18a3d !important;
+  box-shadow: 0 0 0 3px rgba(193,138,61,0.13);
+}
+
+/* Premium button */
+.register-3d-card .auth-submit {
+  background: linear-gradient(110deg, #70172f, #9a2949) !important;
+  color: #fff !important;
+  border: 2px solid #d4af37 !important;
+  border-radius: 30px !important;
+  min-height: 48px;
+  font-weight: 700;
+  box-shadow: 0 7px 18px rgba(112, 23, 47, 0.2);
+}
+
+.register-3d-card .auth-submit:hover {
+  background: linear-gradient(110deg, #9a2949, #70172f) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(112, 23, 47, 0.25);
+}
+
+/* Footer links */
+.register-3d-card .auth-switch a,
+.register-3d-card .auth-back {
+  color: #861d3d;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .register-3d-form-section {
+    padding: 35px 15px !important;
+  }
+
+  .register-3d-card {
+    padding: 35px 22px !important;
+  }
+
+  .register-3d-card h1 {
+    font-size: 30px;
+  }
+}
+
+.register-3d-card .auth-brand {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100%;
+  margin: 0 auto 22px !important;
+  text-align: center;
+}
