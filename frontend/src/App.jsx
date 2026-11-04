@@ -14,6 +14,7 @@ import Checkout from "./Checkout";
 import AdminOrders from "./admin/AdminOrders";
 import OrderSuccess from "./OrderSuccess";
 import ProductDetails from "./pages/ProductDetails";
+import ForgotPassword from "./pages/ForgotPassword";
 import Register from "./pages/Register";
 import {
   FaSearch,
@@ -153,7 +154,7 @@ function HomePage() {
 
     fetchProducts();
   }, []);
-
+  const [showLoginPopup, setShowLoginPopup] = useState(false);
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
   const [cart, setCart] = useState([]);
@@ -218,8 +219,7 @@ function HomePage() {
   // Add product to backend cart
 const addToCart = async (product) => {
   if (!localStorage.getItem("token")) {
-    alert("Please login first to add products to your bag.");
-    navigate("/login");
+    setShowLoginPopup(true);
     return;
   }
 
@@ -231,8 +231,6 @@ const addToCart = async (product) => {
 
     if (response.data.success) {
       setCart(response.data.cart?.items || []);
-
-      // Redirect to My Orders after successful addition
       navigate("/cart");
     }
   } catch (error) {
@@ -769,9 +767,42 @@ const addToCart = async (product) => {
           <p>Designed with elegance ♥</p>
         </div>
       </footer>
+      
+       {showLoginPopup && (
+        <div className="login-popup-overlay">
+          <div className="login-popup-card">
+            <div className="login-popup-icon">🛍️</div>
+
+            <h2>Welcome to Rajlaxmi</h2>
+
+            <div className="popup-divider">✦ ── ❀ ── ✦</div>
+
+            <p>
+              Please login to add your favourite products
+              to your shopping bag.
+            </p>
+
+            <button
+              className="popup-login-btn"
+              onClick={() => navigate("/login")}
+            >
+              Login Now
+            </button>
+
+            <button
+              className="popup-close-btn"
+              onClick={() => setShowLoginPopup(false)}
+            >
+              Continue Shopping
+            </button>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
+   
 
 
 function App() {
@@ -805,6 +836,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order-success" element={<OrderSuccess />} />
         <Route path="/my-orders" element={<MyOrders />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
 
         <Route
           path="/product/:id"

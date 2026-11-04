@@ -50,14 +50,7 @@ export default function Login() {
 
         {/* Left Welcome Video */}
         <section className="auth-video-section">
-          <video
-            className="auth-welcome-video"
-            src="/login-welcome.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
+          <video className="auth-welcome-video" src="/login-welcome.mp4"autoPlay controls loop playsInline/>
 
           <div className="auth-video-overlay">
             <h2>Welcome to Rajlaxmi Boutique</h2>
@@ -90,13 +83,7 @@ export default function Login() {
 
             <div className="auth-input-wrap">
               <FaEnvelope />
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-                value={form.email}
-                onChange={handleChange}
+              <input id="email" name="email" type="email" placeholder="Enter your email" value={form.email}  onChange={handleChange}
                 autoComplete="email"
                 required
               />

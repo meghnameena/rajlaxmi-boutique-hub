@@ -1,3 +1,4 @@
+
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
@@ -18,8 +19,15 @@ const userSchema = new mongoose.Schema(
 
     password: {
       type: String,
-      required: true,
       minlength: 6,
+      required: function () {
+        return !this.googleId;
+      },
+    },
+
+    googleId: {
+      type: String,
+      default: null,
     },
 
     role: {
@@ -32,6 +40,16 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
+
+    resetPasswordToken: {
+      type: String,
+      default: null,
+    },
+
+    resetPasswordExpires: {
+      type: Date,
+      default: null,
+    },
   },
   {
     timestamps: true,
@@ -39,9 +57,3 @@ const userSchema = new mongoose.Schema(
 );
 
 module.exports = mongoose.model("User", userSchema);
-
-//Name: Meghna
-// Email: admin@rajlaxmi.com
-// Password: encrypted
-// Role: admin
-// Active: true
